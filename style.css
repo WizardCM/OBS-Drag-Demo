@@ -1,0 +1,15 @@
+
+.link {
+	border-radius: 12px;
+	cursor: move;
+	display: block;
+	padding: 14px 0;
+	width: 100%;
+}
+.gone {
+	/* 
+		Required for dragImage to show on Chrome
+	 */
+	position: absolute;
+	left: calc(100vw + 99999px);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OBS Overlay Drag Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class="gone">
+			<!-- This image is used when dragging elements -->
+			<img src="obs.png" id="dragImage" />
+		</div>
+		<div class="container">
+			<h1>OBS Overlay Drag-and-drop Test</h1>
+			<p>We're looking at making installing web-based overlays easier.</p>
+			<p>This page is a demo of a <strong>simple widget you can drag</strong> straight into OBS, no extra steps required.</p>
+			
+			<div class="row" id="button-wrapper">
+				<!-- This element is automatically populated using JavaScript. -->
+			</div>
+			<div>
+				<br />
+				<h3>Supported Parameters</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Field name</th>
+							<th scope="col">Description</th>
+							<th scope="col">Fallback</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>name</code></td>
+							<td>Name of the source in the OBS list</td>
+							<td>URL Domain</td>
+						</tr>
+						<tr>
+							<td><code>width</code></td>
+							<td>Width of the source in the canvas</td>
+							<td>Canvas width</td>
+						</tr>
+						<tr>
+							<td><code>height</code></td>
+							<td>Height of the source in the canvas</td>
+							<td>Canvas height</td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+				<h3>Failed attempts and notes</h3>
+				<ul>
+					<li>It may be worth stripping out the <code>name=</code> parameter (and others) before setting the OBS URL</li>
+					<li><code>text/uri-list</code> doesn't work well enough in JavaScript drag-and-drop to be a viable way of loading a stack of sources in one drag - more info about the <code>dataTransfer</code> API <a href="https://html.spec.whatwg.org/multipage/dnd.html#the-datatransfer-interface">here</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
