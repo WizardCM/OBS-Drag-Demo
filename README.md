@@ -1,6 +1,6 @@
 # OBS Browser Dragging Example
 
-**What:** Drag a webpage, direct into OBS. Pre-defined sizes, pre-defined names.
+**What:** Drag a webpage, direct into OBS. Pre-defined sizes, pre-defined names. [Test it here](https://wizardcm.github.io/OBS-Drag-Demo/).
 
 **Why:** Adding overlays can require a lot of effort. Let's make it easier.
 
