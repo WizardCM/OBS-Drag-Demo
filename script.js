@@ -58,7 +58,7 @@ var buttons = [
 document.addEventListener("dragstart", e => {
 	dragged = e.target;
 	e.dataTransfer.setDragImage(document.querySelector('#dragImage'), pos, pos);
-	e.dataTransfer.setData("text/uri-list", dragged.id);
+	e.dataTransfer.setData("text/uri-list", dragged.href);
 });
 
 document.addEventListener("dragend", e => dragged.blur());
