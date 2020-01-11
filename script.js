@@ -19,16 +19,16 @@ var buttons = [
 		title: "800x600",
 		url: "http://howbigismybrowser.com/",
 		params: {
-			"obs-name": "Resolution Info",
-			"obs-width": 800,
-			"obs-height": 600
+			"layer-name": "Resolution Info",
+			"layer-width": 800,
+			"layer-height": 600
 		}
 	},
 	{
 		title: "I'm a fancy third party overlay",
 		url: "./overlay_example.html",
 		params: {
-			"obs-name": "Fancy Lower Third"
+			"layer-name": "Fancy Lower Third"
 		},
 		style: "btn-danger",
 		tooltip: "Canvas Size<br>Drag me into OBS!"
@@ -37,12 +37,12 @@ var buttons = [
 		title: "1280x720",
 		url: "http://howbigismybrowser.com/",
 		params: {
-			"obs-name": "Resolution Info",
+			"layer-name": "Resolution Info",
 			randomStuff: "Who knows",
 			andMore: true,
 			andEvenMore: 0,
-			"obs-width": 1280,
-			"obs-height": 720
+			"layer-width": 1280,
+			"layer-height": 720
 		}
 	},
 	{},
@@ -50,9 +50,9 @@ var buttons = [
 		title: "1280x1080",
 		url: "http://howbigismybrowser.com/",
 		params: {
-			"obs-name": "Resolution Info",
-			"obs-width": 1280,
-			"obs-height": 1080
+			"layer-name": "Resolution Info",
+			"layer-width": 1280,
+			"layer-height": 1080
 		}
 	}
 ];
