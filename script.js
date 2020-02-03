@@ -1,4 +1,4 @@
-var dragged;
+let dragged;
 const pos = 30;
 /**
  * https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Multiple_items
@@ -10,7 +10,7 @@ const pos = 30;
   * Rather than defining the <a> manually and repeatedly, we're using a JS object.
   * An empty object {} will leave a button-sized gap to help with alignment.
   */
-var buttons = [
+let buttons = [
 	{
 		title: "I'm just a regular webpage",
 		url: "https://obsproject.com/startup/v23-0-0"

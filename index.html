@@ -14,8 +14,7 @@
 			<img src="obs.png" id="dragImage" />
 		</div>
 		<div class="container">
-			<h1>OBS Overlay Drag-and-drop Test</h1>
-			<p>We're looking at making installing web-based overlays easier.</p>
+			<h1>OBS Overlay Drag-and-drop Demo</h1>
 			<p>This page is a demo of a <strong>simple widget you can drag</strong> straight into OBS, no extra steps required.</p>
 			
 			<div class="row" id="button-wrapper">
@@ -34,28 +33,47 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><code>name</code></td>
+							<td><code>layer-name</code></td>
 							<td>Name of the source in the OBS list</td>
 							<td>URL Domain</td>
 						</tr>
 						<tr>
-							<td><code>width</code></td>
+							<td><code>layer-width</code></td>
 							<td>Width of the source in the canvas</td>
 							<td>Canvas width</td>
 						</tr>
 						<tr>
-							<td><code>height</code></td>
+							<td><code>layer-height</code></td>
 							<td>Height of the source in the canvas</td>
 							<td>Canvas height</td>
 						</tr>
 					</tbody>
 				</table>
 				<br />
-				<h3>Failed attempts and notes</h3>
-				<ul>
-					<li>It may be worth stripping out the <code>name=</code> parameter (and others) before setting the OBS URL</li>
-					<li><code>text/uri-list</code> doesn't work well enough in JavaScript drag-and-drop to be a viable way of loading a stack of sources in one drag - more info about the <code>dataTransfer</code> API <a href="https://html.spec.whatwg.org/multipage/dnd.html#the-datatransfer-interface">here</a></li>
-				</ul>
+				<h3>For Developers</h3>
+				<p>There are a few ways you can use this on your website.</p>
+				<p>The most basic method is a simple anchor (<code>&lt;a href=""&gt;</code>). The user drags the link into OBS, and OBS will parse the URL & parameters. Browser compatibility in this area is not perfect.</p>
+				<p><strong>Recommended: </strong>For an advanced, fancy design, you want to use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer">DataTransfer API.</a> Specifically, the <code>dragstart</code> event. Example code below:</p>
+				<p><pre><code>
+	let dragged;
+	// Configure an offset from the cursor for your drag icon
+	const pos = 30;
+
+	// Add an event listener
+	document.addEventListener("dragstart", e => {
+		dragged = e.target;
+		// Customize the visible 'thumbnail' while dragging
+		e.dataTransfer.setDragImage(document.querySelector('#dragImage'), pos, pos);
+		// Set the data type, and the value. You specifically want text/uri-list.
+		e.dataTransfer.setData("text/uri-list", dragged.href);
+	});
+
+	// Optionally, remove the focus from the button
+	document.addEventListener("dragend", e => dragged.blur());
+
+	// If using an anchor, block the default behaviour
+	document.addEventListener("click", e => e.preventDefault());
+				</code></pre></p>
 			</div>
 		</div>
 	</body>
