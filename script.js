@@ -13,7 +13,8 @@ const pos = 30;
 let buttons = [
 	{
 		title: "I'm just a regular webpage",
-		url: "https://obsproject.com/startup/v23-0-0"
+		url: "https://obsproject.com/startup/v23-0-0",
+		tooltip: "Drag me into OBS!"
 	},
 	{
 		title: "800x600",
@@ -45,7 +46,11 @@ let buttons = [
 			"layer-height": 720
 		}
 	},
-	{},
+	{
+		//title: "We need to go deeper..",
+		//style: "btn-warning",
+		//url: "#"
+	},
 	{
 		title: "1280x1080",
 		url: "http://howbigismybrowser.com/",

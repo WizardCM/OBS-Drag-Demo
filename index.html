@@ -15,14 +15,27 @@
 		</div>
 		<div class="container">
 			<h1>OBS Overlay Drag-and-drop Demo</h1>
-			<p>This page is a demo of a <strong>simple widget you can drag</strong> straight into OBS, no extra steps required.</p>
+			<p>This page is a demo of a <strong>simple widget you can drag</strong> from a website straight into OBS, no extra steps required.</p>
 			
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<img src="demo-gif.gif" class="img-thumbnail" />
+					<br /><br />
+				</div>
+				<div class="col-12 col-md-6"></div>
+			</div>
+
+			<div class="row no-gutters">
+				<br />
+				<p>Using the OBS v25 RC? Try dragging one of these buttons! <strong>Note:</strong> This will not work if OBS is running as Administrator.</p>
+			</div>
 			<div class="row" id="button-wrapper">
 				<!-- This element is automatically populated using JavaScript. -->
 			</div>
 			<div>
 				<br />
 				<h3>Supported Parameters</h3>
+				<p>These are standard URL parameters. They will define the initial state of the source once it's in OBS. You can then customize them as normal.</p>
 				<table class="table">
 					<thead>
 						<tr>
@@ -50,7 +63,7 @@
 					</tbody>
 				</table>
 				<br />
-				<h3>For Developers</h3>
+				<h3>For Web Developers</h3>
 				<p>There are a few ways you can use this on your website.</p>
 				<p>The most basic method is a simple anchor (<code>&lt;a href=""&gt;</code>). The user drags the link into OBS, and OBS will parse the URL & parameters. Browser compatibility in this area is not perfect.</p>
 				<p><strong>Recommended: </strong>For an advanced, fancy design, you want to use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer">DataTransfer API.</a> Specifically, the <code>dragstart</code> event. Example code below:</p>
